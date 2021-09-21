@@ -18,6 +18,7 @@ namespace timebreaker
             TimeBreaker.ContextMenuStrip.Items.Add("3 Hours", null);
             TimeBreaker.ContextMenuStrip.Items.Add("6 Hours", null);
             TimeBreaker.ContextMenuStrip.Items.Add("Stop", null);
+            TimeBreaker.ContextMenuStrip.Items.Add("Quit", null);
             TimeBreaker.ContextMenuStrip.ItemClicked += new ToolStripItemClickedEventHandler(ToolStrip_Clicked);
         }
 
@@ -51,6 +52,10 @@ namespace timebreaker
             if (e.ClickedItem.Text != "Stop")
             {
                 timer.Start();
+            }
+            if (e.ClickedItem.Text == "Quit")
+            {
+                Dispose();
             }
         }
 
